@@ -7,7 +7,7 @@ This is a website application for a pizza shop to allow order.
 * You'll require a web browser to open this
 * Open the file using the web browser and you are done
 * There is no other code this website depends on
-* Live link website: 
+* Live link website: https://ramzanthenolph.github.io/pizza-shop/
 ## Known bugs
 No known bugs.
 ## Technologies used
