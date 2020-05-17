@@ -1,4 +1,9 @@
 //business logic
+function Getpizza(size, topping, total){
+  this.size= size;
+  this.topping= topping;
+  this.total= total;
+}
 function Delivery(name, phone, address){
   this.name= name;
   this.phone= phone;
@@ -28,4 +33,5 @@ $(document).ready(function(){
         '<span class="btn btn-outline-secondary" id="checkout">Checkout</span>'+
         '</div>');
     });
+    
 });
