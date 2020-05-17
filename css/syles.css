@@ -1,0 +1,17 @@
+.home{
+    text-align: center;
+    background-image: url(../images/order.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-top: 17%;
+    padding-bottom: 17%;
+    color: ;
+}
+.order{
+    background-image: url(../images/form.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 7%;
+}

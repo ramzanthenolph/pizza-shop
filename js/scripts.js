@@ -29,9 +29,16 @@ $(document).ready(function(){
           '<label for="deliveryAddress">Address</label>' +
           '<input type="text" class="form-control deliveryAddress">' +
         '</div>' +
-        '<span class="btn btn-outline-info" id="submit">Submit Details</span><br>'+
-        '<span class="btn btn-outline-secondary" id="checkout">Checkout</span>'+
+        '<span class="btn btn-info" id="submit">Submit Details</span><br>'+
+        '<span class="btn btn-secondary" id="checkout">Checkout</span>'+
         '</div>');
     });
-    
+    $("#submit").click(function(event){
+      event.preventDefault();
+      var inputtedName=  $("input.deliveryName").val();
+      var inputtedNumber= $("input#deliveryNumber").val();
+      var inputtedAddress= $("input#deliveryAddress").val();
+      var newDelivery= new Delivery(inputtedName, inputtedNumber, inputtedAddress);
+      console.log("Hello "+inputtedName+ ", your delivery has been processed and will take upto 30 mins");    
+    });
 });
