@@ -1,3 +1,10 @@
+//business logic
+function Delivery(name, phone, address){
+  this.name= name;
+  this.phone= phone;
+  this.address= address
+}
+
 //user interface logic
 $(document).ready(function(){
     $("#deliver").click(function(){
