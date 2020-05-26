@@ -39,22 +39,43 @@ $(document).ready(function(){
       alert("Hello "+inputtedName+ ", your delivery has been processed and will take upto 30 mins");    
     });
     $("#checkout").click(function(){
-      let size = $("#size option:selected").val();
-      let topping = $("#toppings option:selected").val();
-      let totalPrice, price;
-      topping=50;
+      var size = $("#size option:selected").val();
+      var number = $("#number").val();
+      var topping = $("#topping option:selected").val();
 
+      var order = ( s, t, n, total) => {
+        return {s, t, n, total};
+      };
+      //check price
+      var price, totalPrice;
       switch(size){
-        case size= "small":
-          price=550;
-          totalPrice= price+topping+150;
-        case size= "medium":
-          price= 850;
-          totalPrice= price+topping+150;
-        case size= "large":
-          price= 1200;
-          totalPrice= price+topping+150;
+        case size = "small":
+          price = 550;
+          if(topping === "0"){
+            totalPrice = (price * number);
+          }
+          else{
+            totalPrice = (price * number)+ 50;
+          }
+          break;
+        case size = "medium":
+          price = 850;
+          if(topping === "0"){
+            totalPrice = (price * number);
+          }
+          else{
+            totalPrice = (price * number)+ 50;
+          }
+          break;
+        case size = "large":
+          price = 1200;
+          if(topping === "0"){
+            totalPrice = (price * number);
+          }
+          else{
+            totalPrice = (price * number)+ 50;
+          }
       }
-      $(".total").append(totalPrice);
+      
     });
 });
