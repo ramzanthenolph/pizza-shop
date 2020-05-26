@@ -1,9 +1,5 @@
 //business logic
-function Getpizza(size, topping, total){
-  this.size= size;
-  this.topping= topping;
-  this.total= total;
-}
+
 function Delivery(name, phone, address){
   this.name= name;
   this.phone= phone;
@@ -31,6 +27,7 @@ $(document).ready(function(){
         '</div>' +
         '<span class="btn btn-info" id="submit">Submit Details</span><br>'+
         '<span class="btn btn-secondary" id="checkout">Checkout</span>'+
+        '<p class="total">Total: </p>'+
         '</div>');
     });
     $("span#submit").click(function(event){
@@ -39,13 +36,13 @@ $(document).ready(function(){
       var inputtedNumber= $("input#deliveryNumber").val();
       var inputtedAddress= $("input#deliveryAddress").val();
       var newDelivery= new Delivery(inputtedName, inputtedNumber, inputtedAddress);
-      console.log("Hello "+inputtedName+ ", your delivery has been processed and will take upto 30 mins");    
+      alert("Hello "+inputtedName+ ", your delivery has been processed and will take upto 30 mins");    
     });
     $("#checkout").click(function(){
       let size = $("#size option:selected").val();
       let topping = $("#toppings option:selected").val();
       let totalPrice, price;
-      topping=50
+      topping=50;
 
       switch(size){
         case size= "small":
@@ -58,6 +55,6 @@ $(document).ready(function(){
           price= 1200;
           totalPrice= price+topping+150;
       }
-      console.log("Your total price is sh." +totalPrice+".")
+      $(".total").append(totalPrice);
     });
 });
