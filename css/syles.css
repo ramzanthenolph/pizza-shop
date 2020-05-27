@@ -1,3 +1,6 @@
+body{
+    font-family: 'Noto Sans JP', sans-serif;
+}
 .home{
     text-align: center;
     background-image: url(../images/order.jpg);
