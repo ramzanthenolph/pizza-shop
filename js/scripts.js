@@ -31,7 +31,7 @@ $(document).ready(function(){
             totalPrice = (price * number);
           }
           else{
-            totalPrice = (price * number)+ 50;
+            totalPrice = (price + 50) * number;
           }
           break;
         case size = "medium":
@@ -40,7 +40,7 @@ $(document).ready(function(){
             totalPrice = (price * number);
           }
           else{
-            totalPrice = (price * number)+ 50;
+            totalPrice = (price + 50)* number;
           }
           break;
         case size = "large":
@@ -49,7 +49,7 @@ $(document).ready(function(){
             totalPrice = (price * number);
           }
           else{
-            totalPrice = (price * number)+ 50;
+            totalPrice = (price +50) * number;
           }
       }
       var newOrder = order(size, number, totalPrice);
