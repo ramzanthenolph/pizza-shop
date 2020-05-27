@@ -10,7 +10,7 @@ function Delivery(name, phone, address){
 //user interface logic
 $(document).ready(function(){
     $("#deliver").click(function(){
-        
+        $("#deliverydetails").show();
     });
     
     $("#checkout").click(function(){
@@ -53,8 +53,8 @@ $(document).ready(function(){
           }
       }
       var newOrder = order(size, number, totalPrice);
-      $("p.total").append("<br>"+"<p>Your total is "+newOrder.total+".</p>");
-      alert("your total cost is" +newOrder.total+ ".");
+      $("p.total").append("Your total is "+newOrder.total+".");
+      //alert("your total cost is" +newOrder.total+ ".");
     });
 
     $("#submit").click(function(event){
