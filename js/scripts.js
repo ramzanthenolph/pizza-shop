@@ -6,6 +6,7 @@ function Delivery(name, phone, address){
   this.address= address
 }
 
+
 //user interface logic
 $(document).ready(function(){
     $("#deliver").click(function(){
@@ -30,28 +31,22 @@ $(document).ready(function(){
         '<p class="total">Total: </p>'+
         '</div>');
     });
-    $("span#submit").click(function(event){
-      event.preventDefault();
-      var inputtedName=  $("input.deliveryName").val();
-      var inputtedNumber= $("input#deliveryNumber").val();
-      var inputtedAddress= $("input#deliveryAddress").val();
-      var newDelivery= new Delivery(inputtedName, inputtedNumber, inputtedAddress);
-      alert("Hello "+inputtedName+ ", your delivery has been processed and will take upto 30 mins");    
-    });
+    
     $("#checkout").click(function(){
+     
       var size = $("#size option:selected").val();
       var number = $("#number").val();
-      var topping = $("#topping option:selected").val();
+      var topping = $("#toppings option:selected").val();
 
-      var order = ( s, t, n, total) => {
-        return {s, t, n, total};
+      var order = ( s, n, total) => {
+        return {s, n, total};
       };
       //check price
       var price, totalPrice;
       switch(size){
         case size = "small":
           price = 550;
-          if(topping === "0"){
+          if(topping === "dd"){
             totalPrice = (price * number);
           }
           else{
@@ -60,7 +55,7 @@ $(document).ready(function(){
           break;
         case size = "medium":
           price = 850;
-          if(topping === "0"){
+          if(topping === "dd"){
             totalPrice = (price * number);
           }
           else{
@@ -69,13 +64,21 @@ $(document).ready(function(){
           break;
         case size = "large":
           price = 1200;
-          if(topping === "0"){
+          if(topping === "dd"){
             totalPrice = (price * number);
           }
           else{
             totalPrice = (price * number)+ 50;
           }
       }
-      
+      var newOrder = order(size, number, totalPrice);
+      $(".total").append("<br>"+"<p>Your total is "+newOrder.total+".</p>");
     });
+
+    $("#submit").click(function(e){
+      e.preventDefault();
+      var name = $("input.deliveryName").val();
+      var location = $("input.deliveryAddress").val();
+      alert("Hello "+ name + " Your order will arrive at  " + location+ " In 15 minutes with an additional cost of 300 ksh " );
+  });
 });
