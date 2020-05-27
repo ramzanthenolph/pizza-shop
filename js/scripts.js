@@ -72,13 +72,14 @@ $(document).ready(function(){
           }
       }
       var newOrder = order(size, number, totalPrice);
-      $(".total").append("<br>"+"<p>Your total is "+newOrder.total+".</p>");
+      $("p.total").append("<br>"+"<p>Your total is "+newOrder.total+".</p>");
+      alert("your total cost is" +newOrder.total+ ".");
     });
 
-    $("#submit").click(function(e){
-      e.preventDefault();
+    $("#submit").click(function(event){
+      event.preventDefault();
       var name = $("input.deliveryName").val();
       var location = $("input.deliveryAddress").val();
-      alert("Hello "+ name + " Your order will arrive at  " + location+ " In 15 minutes with an additional cost of 300 ksh " );
+      alert("Hello "+ name + " Your order will arrive at  " + location+ " In 15 minutes with an additional cost of 150 ksh " );
   });
 });
